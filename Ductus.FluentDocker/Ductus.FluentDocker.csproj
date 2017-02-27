@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ductus.FluentDocker</RootNamespace>
     <AssemblyName>Ductus.FluentDocker</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SharpCompress, Version=0.11.3.0, Culture=neutral, PublicKeyToken=beaf6f427e128133, processorArchitecture=MSIL">
@@ -74,6 +74,7 @@
     <Compile Include="Executors\Parsers\ClientContainerInspectCommandResponder.cs" />
     <Compile Include="Executors\Parsers\ClientDiffResponseParser.cs" />
     <Compile Include="Executors\Parsers\ClientImagesResponseParser.cs" />
+    <Compile Include="Executors\Parsers\GeneralResponseParser.cs" />
     <Compile Include="Executors\Parsers\IgnoreErrorResponseParser.cs" />
     <Compile Include="Executors\Parsers\NoLineResponseParser.cs" />
     <Compile Include="Executors\Parsers\ClientTopResponseParser.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Extensions\ResourceExtensions.cs" />
     <Compile Include="Model\Builders\AddCommand.cs" />
     <Compile Include="Model\Builders\ContainerBuilderConfig.cs" />
+    <Compile Include="Model\Builders\ExecCommand.cs" />
     <Compile Include="Model\Builders\FileBuilderConfig.cs" />
     <Compile Include="Model\Builders\HostBuilderConfig.cs" />
     <Compile Include="Model\Builders\ICommand.cs" />

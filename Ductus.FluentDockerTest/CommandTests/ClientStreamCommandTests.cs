@@ -120,6 +120,7 @@ namespace Ductus.FluentDockerTest.CommandTests
           Environment = new[] { "POSTGRES_PASSWORD=mysecretpassword" }
         }, _certificates);
 
+
         id = cmd.Data;
         var config = _docker.InspectContainer(id, _certificates);
         var endpoint = config.Data.NetworkSettings.Ports.ToHostPort("5432/tcp", _docker);
