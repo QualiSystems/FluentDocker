@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Ductus.FluentDocker.Builders;
@@ -19,11 +20,12 @@ namespace Ductus.FluentDockerTest.FluentApiTests
         [TestMethod]
         public void BuildContainerRenderServiceInStoppedMode()
         {
+            Environment.SetEnvironmentVariable("DOCKER_HOST", "http://40.71.83.75:4243");
+
             using (
                 var container =
                     new Builder().UseContainer()
                         .UseImage("quali/monosible:v1")
-                        //.WithEnvironment("POSTGRES_PASSWORD=mysecretpassword")
                         .Build())
             {
                 Assert.AreEqual(ServiceRunningState.Stopped, container.State);
@@ -38,7 +40,8 @@ namespace Ductus.FluentDockerTest.FluentApiTests
 
             //using (
             var container =
-                new Builder().UseContainer()
+                new Builder()
+                    .UseContainer()
                     .WithName("AnsibleContainer")
                     .UseImage("quali/monosible:v1")
                     .KeepContainer() //Do not delete on dispose
